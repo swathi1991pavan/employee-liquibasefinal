@@ -1,12 +1,13 @@
 package com.example.employee.jpa.service;
 
-import java.util.ArrayList;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.example.employee.jpa.constants.ApiConstants;
 import com.example.employee.jpa.dto.ResponseDto;
 import com.example.employee.jpa.dto.UserDto;
 import com.example.employee.jpa.model.Employee;
@@ -23,6 +24,8 @@ import com.example.employee.jpa.repository.UserRepository;
         
         @Autowired
 	    private RestTemplate restTemplate;
+        
+        
 		
         
         @Override
@@ -33,7 +36,7 @@ import com.example.employee.jpa.repository.UserRepository;
             //UserDto userDto = mapToUser(user);
             System.out.println("Hi this is swathi");
             ResponseEntity<UserDto> responseEntity = restTemplate
-                    .getForEntity("http://192.168.60.16:8081/api/users/" + userId,
+                    .getForEntity(ApiConstants.BASE_URL + userId,
                     UserDto.class);
             System.out.println(responseEntity);
             UserDto userDto = responseEntity.getBody();

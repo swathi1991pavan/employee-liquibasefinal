@@ -25,7 +25,8 @@ public class JwtController {
 	 private AuthenticationManager authenticationManager;
 	
 	
-	@PostMapping
+	 
+	@PostMapping("/v1")
 	public String authenticateAndGetToken(@RequestBody AuthRequest authRequest) {
 		 Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(authRequest.getUsername(), authRequest.getPassword()));
 	        if (authentication.isAuthenticated()) {
@@ -36,3 +37,28 @@ public class JwtController {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*{
+"username" : "Swathi",
+"password" : "swathi"
+}*/

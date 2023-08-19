@@ -1,6 +1,6 @@
 package com.example.employee.jpa.controller;
 
-import java.util.ArrayList;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.employee.jpa.dto.ResponseDto;
-import com.example.employee.jpa.service.EmployeeJpaService;
 import com.example.employee.jpa.service.UserImpl;
 
 
@@ -21,7 +20,7 @@ public class UserController{
 	@Autowired
     public UserImpl userService ;	
 	
-@GetMapping("{id}")
+@GetMapping("/v1/{id}")
 public ResponseEntity<ResponseDto> getUser(@PathVariable("id") Integer userId){
     ResponseDto responseDto = userService.getUser(userId);
     return ResponseEntity.ok(responseDto);

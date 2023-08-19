@@ -7,7 +7,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.employee.jpa.model.UserInfo;
-import com.example.employee.jpa.service.EmployeeJpaService;
 import com.example.employee.jpa.service.UserInfoService;
 
 @RestController
@@ -24,3 +23,27 @@ public class UserInfoController {
 	}
 	
 }
+
+
+
+
+/*
+
+http://localhost:8085/api/addUser
+
+
+{
+"name" : "Swathi" ,
+"email" : "ss@gmail.com",
+"password" : "swathi" ,
+"roles" : "ROLE_ADMIN"
+}
+
+*
+
+{
+    "name" : "Ron" ,
+    "email" : "rr@gmail.com",
+    "password" : "ron" ,
+    "roles" : "ROLE_USER"
+}*/

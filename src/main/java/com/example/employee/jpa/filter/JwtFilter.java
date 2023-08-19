@@ -7,7 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Repository;
+
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -26,6 +26,12 @@ import jakarta.servlet.http.HttpServletResponse;
 public class JwtFilter extends OncePerRequestFilter{
 	 @Autowired
 	    private JwtService jwtService;
+	 
+	 
+	 //added while using the controllertesting
+	 public JwtFilter(JwtService jwtService) {
+	        this.jwtService = jwtService;
+	    }
 	 
 	 @Autowired
 	    private UserInfoUserDetailsService userDetailsService;
